@@ -95,8 +95,37 @@ if page != "Overview":
 
         st.metric("Total Test Transactions", f"{len(test_trades):,}")
 
+        asset_options = sorted(
+            test_trades["asset_class"].dropna().unique().tolist()
+        )
+
+        selected_assets = st.multiselect(
+            "Filter by Asset Class",
+            options=asset_options,
+            default=asset_options,
+        )
+
+        status_options = sorted(
+            test_trades["reporting_status"].dropna().unique().tolist()
+        )
+
+        selected_statuses = st.multiselect(
+            "Filter by Reporting Status",
+            options=status_options,
+            default=status_options,
+        )
+
+        filtered_trades = test_trades[
+            test_trades["asset_class"].isin(selected_assets)
+            & test_trades["reporting_status"].isin(selected_statuses)
+        ].copy()
+
+        st.caption(
+            f"Showing {len(filtered_trades):,} matching transactions"
+        )
+
         st.dataframe(
-            test_trades[
+            filtered_trades[
                 [
                     "record_id",
                     "trade_id",
