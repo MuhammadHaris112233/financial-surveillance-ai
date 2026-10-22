@@ -1,0 +1,72 @@
+record_id,trade_id,risk_score,risk_priority,ai_status,ai_report
+206,TEST-000206,55,HIGH,SUCCESS,"### 1. Investigation Summary
+
+Record ID 206 (Trade ID: TEST-000206) triggered an alert under the `RULE_AND_ML` investigation category with a risk score of 55 and a risk priority of ""HIGH"". The system identified multiple detection methods, specifically a missing counterparty identifier and a statistical anomaly flagged by the Isolation Forest model.
+
+### 2. Observed Issues
+
+- **Missing Counterparty Identifier:** The transaction record lacks counterparty information.
+- **ML Anomaly:** Isolation Forest identified an unusual combination of transaction attributes, which serves as a statistical flag only and does not establish fraud.
+- **Multiple Detection Methods:** The transaction triggered more than one surveillance detection mechanism.
+
+### 3. Recommended Analyst Checks
+
+1. Verify the source trading system logs to determine why the counterparty identifier was omitted.
+2. Review the transaction attributes flagged by the Isolation Forest model against historical baseline data for this trade ID or account.
+3. Perform human review of the trade details to assess operational completeness.
+
+### 4. Missing Evidence
+
+- Counterparty identity and related metadata.
+- Baseline comparative data for the Isolation Forest statistical anomaly score.
+- Full trade lifecycle documentation.
+
+### 5. Conclusion
+
+The transaction exhibits data omissions (missing counterparty) and a statistical anomaly flagged by machine learning. These indicators warrant human review to resolve data gaps and assess contextual risk, but do not constitute confirmed fraud or regulatory breaches based on the provided evidence."
+515,TEST-000515,55,HIGH,SUCCESS,"### 1. Investigation Summary
+
+The counterparty identifier is missing. Additionally, an Isolation Forest model identified an unusual combination of transaction attributes, which serves as a statistical flag and does not establish fraud.
+
+### 2. Observed Issues
+
+- Missing counterparty identifier.
+- Statistical anomaly flagged by the Isolation Forest algorithm regarding the transaction attributes.
+
+### 3. Recommended Analyst Checks
+
+1. Recommend human review of the transaction details to assess the statistical anomaly.
+2. Verify trade records to determine why the counterparty identifier is missing.
+
+### 4. Missing Evidence
+
+- Counterparty identifier data.
+- Contextual details explaining the unusual combination of transaction attributes flagged by the machine learning model.
+
+### 5. Conclusion
+
+The transaction exhibits a missing counterparty identifier and a statistical ML anomaly, resulting in a high risk priority score of 55. As these findings represent data gaps and statistical flags rather than confirmed infractions, further human review is required."
+677,TEST-000677,55,HIGH,SUCCESS,"### 1. Investigation Summary
+
+** The transaction triggered alerts due to a missing counterparty identifier and an Isolation Forest model flag indicating an unusual combination of transaction attributes (which represents a statistical flag only and does not establish fraud).
+
+### 2. Observed Issues
+
+- The counterparty identifier is missing from the transaction record.
+- The Isolation Forest machine learning model flagged the transaction for an unusual combination of transaction attributes.
+- The record triggered multiple detection methods (rule-based and machine learning).
+
+### 3. Recommended Analyst Checks
+
+1. Recommend human review to examine the underlying trade details.
+2. Verify the transaction records to determine the reason for the missing counterparty identifier.
+3. Review the specific attribute combination flagged by the Isolation Forest model against normal trading patterns.
+
+### 4. Missing Evidence
+
+- Counterparty identification details.
+- Additional contextual trade data required to fully evaluate the statistical anomaly identified by the machine learning model.
+
+### 5. Conclusion
+
+The transaction has been flagged by multiple detection methods due to a missing counterparty identifier and a statistical machine learning anomaly. These indicators do not establish fraud or regulatory breaches. Human review is recommended to investigate the missing data and assess the validity of the transaction attributes."
