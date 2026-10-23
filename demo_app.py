@@ -11,14 +11,14 @@ import plotly.express as px
 
 st.set_page_config(
     page_title="Financial Surveillance AI | Demo",
-    page_icon="🛡️",
+    page_icon="ðŸ›¡ï¸",
     layout="wide",
 )
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "demo_data"
 
-st.title("🛡️ Financial Surveillance AI")
+st.title("Financial Surveillance AI")
 
 st.caption(
     "AI-Powered Transaction Monitoring | "
@@ -66,7 +66,7 @@ test_trades = load_demo_trades()
 # APPLICATION NAVIGATION
 # ---------------------------------------
 
-st.sidebar.title("🛡️ Financial Surveillance AI")
+st.sidebar.title("Financial Surveillance AI")
 
 page = st.sidebar.radio(
     "Navigation",
@@ -138,7 +138,7 @@ if page != "Overview":
                     "reporting_status",
                 ]
             ],
-            use_container_width=True,
+            width="stretch",
             hide_index=True,
         )
 
@@ -189,7 +189,7 @@ if page != "Overview":
                 title="ML Anomaly Distribution",
             )
 
-            st.plotly_chart(fig_ml, use_container_width=True)
+            st.plotly_chart(fig_ml, width="stretch")
 
         with right:
             st.subheader("Rule-Based vs ML Detection")
@@ -211,7 +211,7 @@ if page != "Overview":
                 title="Detection Method Comparison",
             )
 
-            st.plotly_chart(fig_comparison, use_container_width=True)
+            st.plotly_chart(fig_comparison, width="stretch")
 
         st.subheader("Hybrid Detection Alerts")
 
@@ -229,9 +229,34 @@ if page != "Overview":
 
         alerts = test_trades.loc[hybrid, alert_columns].copy()
 
+        asset_options = sorted(alerts["asset_class"].dropna().unique().tolist())
+
+        selected_assets = st.multiselect(
+            "Filter Alerts by Asset Class",
+            options=asset_options,
+            default=asset_options,
+        )
+
+        source_options = sorted(
+            alerts["detection_source"].dropna().unique().tolist()
+        )
+
+        selected_sources = st.multiselect(
+            "Filter Alerts by Detection Source",
+            options=source_options,
+            default=source_options,
+        )
+
+        filtered_alerts = alerts[
+            alerts["asset_class"].isin(selected_assets)
+            & alerts["detection_source"].isin(selected_sources)
+        ].copy()
+
+        st.caption(f"Showing {len(filtered_alerts):,} matching alerts")
+
         st.dataframe(
-            alerts,
-            use_container_width=True,
+            filtered_alerts,
+            width="stretch",
             hide_index=True,
         )
 
@@ -287,7 +312,7 @@ if page != "Overview":
                     "investigation_summary",
                 ]
             ],
-            use_container_width=True,
+            width="stretch",
             hide_index=True,
         )
 
@@ -427,7 +452,7 @@ with left:
 
     fig_assets.update_layout(showlegend=False)
 
-    st.plotly_chart(fig_assets, use_container_width=True)
+    st.plotly_chart(fig_assets, width="stretch")
 
 with right:
     st.subheader("Validation Failures")
@@ -456,4 +481,4 @@ with right:
         title="Detected Data Quality Issues",
     )
 
-    st.plotly_chart(fig_failures, use_container_width=True)
+    st.plotly_chart(fig_failures, width="stretch")
