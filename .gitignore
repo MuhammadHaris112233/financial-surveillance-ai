@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.coverage
+
+# React / Vite
+node_modules/
+dist/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Editor and operating system
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Financial Surveillance AI V2 backups
+financial-surveillance-v2/backend/main_backup.py
+financial-surveillance-v2/frontend/src/*backup*
+financial-surveillance-v2/frontend/src/App (1).jsx
+financial-surveillance-v2/frontend/src/App (1).css
+financial-surveillance-v2/frontend/src/backup_before_redesign/
