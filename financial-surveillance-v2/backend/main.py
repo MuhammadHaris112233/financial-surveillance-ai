@@ -15,7 +15,11 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 ROOT = Path(__file__).resolve().parents[2]
+
 DEMO = ROOT / "demo_data"
+
+if not DEMO.is_dir():
+    DEMO = Path(__file__).resolve().parent / "demo_data"
 
 app = FastAPI(title="Financial Surveillance AI — Demo API", version="2.0.0")
 app.add_middleware(
