@@ -6,6 +6,23 @@ An end-to-end financial surveillance portfolio project demonstrating how Python,
 
 ### 🌐 Live Dashboard
 
+### 🚀 Financial Surveillance AI V2 — React + FastAPI
+
+**[Launch the V2 Interactive Dashboard](https://financial-surveillance-ai.vercel.app/)**
+
+A modern financial surveillance dashboard built with React, Vite, and FastAPI, deployed on Vercel.
+
+Features include:
+- Financial surveillance overview and interactive charts
+- Transaction monitoring and filtering
+- Rule-based and machine learning anomaly detection
+- Risk-prioritised investigation queues
+- AI-assisted investigation reports
+
+The dashboard uses 2,000 synthetic transactions and provides a read-only demonstration without requiring login.
+
+### Original Streamlit Dashboard
+
 **[Launch Financial Surveillance AI](https://financial-surveillance-ai-demo.streamlit.app/)**
 
 Explore the public demonstration directly in your browser. No installation or login is required.
