@@ -20,6 +20,9 @@ Features include:
 - AI-assisted investigation reports
 
 The dashboard uses 2,000 synthetic transactions and provides a read-only demonstration without requiring login.
+### 📸 V2 Dashboard Preview
+
+![Financial Surveillance AI V2 Dashboard](screenshots/dashboard-overview.png)
 
 ### Original Streamlit Dashboard
 
