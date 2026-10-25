@@ -104,6 +104,10 @@ The public dashboard displays saved reports and does not require a live AI API c
 | AI-assisted reporting | Investigation narrative generation in the development workflow |
 | Git and GitHub | Version control and project publishing |
 | Streamlit Community Cloud | Public dashboard hosting |
+| React | Modern interactive V2 dashboard interface |
+| Vite | Frontend development and production build |
+| FastAPI | Python REST API serving surveillance data |
+| Vercel | Hosting the React frontend and FastAPI backend |
 
 ## Project Methodology
 
